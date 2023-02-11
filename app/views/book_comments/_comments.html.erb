@@ -4,7 +4,7 @@
     <p><%= image_tag book_comment.user.get_profile_image,size:'100x100' %><%= book_comment.comment %>
   <!--コメント削除機能-->
     <% if book_comment.user == current_user %>
-      <%= link_to "Destroy", book_book_comment_path(book_comment.book, book_comment), method: :delete %>
+      <%= link_to "Destroy", book_book_comment_path(book_comment.book, book_comment), method: :delete, remote: true %>
 <!--book_book_comments DELETE /books/:book_id/book_comments(.:format)       book_comments#destroy-->
     <% end %>
     </p>
